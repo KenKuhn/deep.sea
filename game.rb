@@ -5,6 +5,7 @@ class DeepSeaAdventure
 
   def setup
     choosePlayerCount
+    playerName
     pickColor
     startingPlayer
   end
@@ -19,8 +20,23 @@ class DeepSeaAdventure
       end
   end
 
+  def playerName
+    puts "Please enter the name of one of the #{@input1} unnamed players!"
+    @input3 = gets.chomp
+    @input3 = [] #issue is here not filling array like I thought. Issue.
+    @input1 = @input1.to_i - 1
+    unless @input1 == 0
+      playerName
+    end
+  end
+
   def pickColor
-    puts "Please enter the name of 1 of the #{@input1} players!"
+    #@input3.each do |name|
+      #need to play around with this. Not working yet.
+    #  puts "#{name} what color would you like to be?"
+    #  colorChoice = gets.chomp
+  #  end
+  puts "#{@input3}"
   end
 
   def startingPlayer
