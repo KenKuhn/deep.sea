@@ -12,20 +12,20 @@ class DeepSeaAdventure
 
   def choosePlayerCount
     puts "How many people are playing?"
-    @input1 = gets.chomp
-      if @input1.to_i != 2..6
+    @player_count = gets.chomp
+      if @player_count.to_i != 2..6
         puts "Please choose a number between 2-6."
         input2 = gets.chomp
-        @input1 = input2
+        @player_count = input2
       end
   end
 
   def playerName
-    puts "Please enter the name of one of the #{@input1} unnamed players!"
+    puts "Please enter the name of one of the #{@player_count} unnamed players!"
     @input3 = gets.chomp
     @input3 = [] #issue is here not filling array like I thought. Issue.
-    @input1 = @input1.to_i - 1
-    unless @input1 == 0
+    @player_count = @player_count.to_i - 1
+    unless @player_count == 0
       playerName
     end
   end
