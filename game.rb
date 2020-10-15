@@ -13,7 +13,7 @@ class DeepSeaAdventure
   def choosePlayerCount
     puts "How many people are playing?"
     @player_count = gets.chomp
-      if @player_count.to_i != 2..6
+      until (2..6).include? @player_count.to_i
         puts "Please choose a number between 2-6."
         input2 = gets.chomp
         @player_count = input2
