@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 class DeepSeaAdventure
   def initialize
     setup
@@ -7,7 +8,8 @@ class DeepSeaAdventure
     choosePlayerCount
     player_info
     gatherInfo
-    startingPlayer
+    displayColors
+    startPlayer
   end
 
   def choosePlayerCount
@@ -36,15 +38,17 @@ class DeepSeaAdventure
     end
   end
 
+def displayColors
+  @playerInfo.each do |name, color|
+    puts "#{name} is the #{color} player."
+    puts
+  end
+end
 
-
-  def startingPlayer
-    @playerInfo.each do |name, color|
-      puts "#{name} is the #{color} player."
-    end
-#@playerInfo.select(1) do |name| #Pulling data from hash needs investigation
-    #  puts "#{name} is player one and will start the game!"
-  #  end
+  def startPlayer
+    x = @playerInfo.keys
+    @startPlayer = x.shuffle.first
+      puts "#{@startPlayer} is player one and will start the game!"
   end
 
 
