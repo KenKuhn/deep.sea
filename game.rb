@@ -9,7 +9,7 @@ class DeepSeaAdventure
     player_info
     gatherInfo
     displayColors
-    startPlayer
+    turn_Order
   end
 
   def choosePlayerCount
@@ -38,17 +38,24 @@ class DeepSeaAdventure
     end
   end
 
-def displayColors
-  @playerInfo.each do |name, color|
-    puts "#{name} is the #{color} player."
-    puts
+  def displayColors
+    @playerInfo.each do |name, color|
+      puts "#{name} is the #{color} player."
+      puts
+    end
   end
-end
 
-  def startPlayer
-    x = @playerInfo.keys
-    @startPlayer = x.shuffle.first
-      puts "#{@startPlayer} is player one and will start the game!"
+
+  def turn_Order
+    @turnOrder = @playerInfo.keys.shuffle
+    @playerOne = @turnOrder.first
+    @playerTwo = @turnOrder[1]
+    @playerThree = @turnOrder[2]
+    @playerFour = @turnOrder[3]
+    @playerFive = @turnOrder[4]
+    @playerSix = @turnOrder[5]
+    @startPlayer = @playerOne
+    puts "#{@startPlayer} is player one and will start the game!"
   end
 
 
