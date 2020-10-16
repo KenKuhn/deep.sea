@@ -4,12 +4,70 @@ class DeepSeaAdventure
     setup
   end
 
+  treasureTokensLevel1 = {
+    tri1: 0,
+    tri2: 0,
+    tri3: 1,
+    tri4: 1,
+    tri5: 2,
+    tri6: 2,
+    tri7: 3,
+    tri8: 3
+  }
+
+  treasureTokensLevel2 = {
+    squ1: 4,
+    squ2: 4,
+    squ3: 5,
+    squ4: 5,
+    squ5: 6,
+    squ6: 6,
+    squ7: 7,
+    squ8: 7
+  }
+
+  treasureTokensLevel3 = {
+    pent1: 8,
+    pent2: 8,
+    pent3: 9,
+    pent4: 9,
+    pent5: 10,
+    pent6: 10,
+    pent7: 11,
+    pent8: 11
+  }
+
+  treasureTokensLevel4 = {
+    hex1: 12,
+    hex2: 12,
+    hex3: 13,
+    hex4: 13,
+    hex5: 14,
+    hex6: 14,
+    hex7: 15,
+    hex8: 15
+  }
+
   def setup
     choosePlayerCount
     player_info
     gatherInfo
     displayColors
     turn_Order
+    game
+  end
+
+  def game
+    round
+    round
+    round
+    game_end
+  end
+
+  def round
+  end
+
+  def game_end
   end
 
   def choosePlayerCount
