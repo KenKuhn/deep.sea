@@ -34,9 +34,10 @@ class DeepSeaAdventure
     @player_count = gets.chomp
       until (2..6).include? @player_count.to_i
         puts "Please choose a number between 2-6."
-        input2 = gets.chomp
-        @player_count = input2
+        @input2 = gets.chomp
+        @player_count = @input2
       end
+      @truePlayerCount = @player_count.to_i
   end
 
 
@@ -127,9 +128,36 @@ class DeepSeaAdventure
   end
 
   def setupOxygenCounter
+    @oxygen_counter = 25
+  end
+
+  def twoPlayerTurn
+  end
+
+  def threePlayerTurn
+  end
+
+  def fourPlayerTurn
+  end
+
+  def fivePlayerTurn
+  end
+
+  def sixPlayerTurn
   end
 
   def player_turns
+      if @truePlayerCount == 2
+        twoPlayerTurn
+      elsif @truePlayerCount == 3
+        threePlayerTurn
+      elsif @truePlayerCount == 4
+        fourPlayerTurn
+      elsif @truePlayerCount == 5
+        fivePlayerTurn
+      elsif @truePlayerCount== 6
+        sixPlayerTurn
+      end
   end
 
   def roll_dice
